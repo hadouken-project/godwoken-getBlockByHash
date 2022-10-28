@@ -1,5 +1,6 @@
 Godwoken RPC call `eth_getBlockByHash` returns some fields with value equal to zero like for this call for block `0x9207b685f981f6bdd1a191de60db31557bafc4774cb2093b395a6c4407b0e6f3`:
-```{
+```javascript
+{
   "jsonrpc": "2.0",
   "id": 1,
   "result": {
@@ -35,4 +36,6 @@ Godwoken RPC call `eth_getBlockByHash` returns some fields with value equal to z
 ```
 Also visible in [gwscan](https://v1.gwscan.com/block/0x9207b685f981f6bdd1a191de60db31557bafc4774cb2093b395a6c4407b0e6f3?tab=raw-data)
 
-This is problem for hardhat fork feature beacous we need to be able to calculated block hash from these parameters but since some of them are equal to zero the calculated hash is invalid. Godwoken RPC should return correct parameters that would get same hash for calculated and rpc hash in the `index.js` file.
+This is problem for hardhat fork feature beacous we need to be able to calculated block hash from these parameters but since some of them are equal to zero the calculated hash is invalid. Godwoken RPC should return correct parameters that would get same hash for calculated and rpc hash in the `getBlockByHashTest.js` file.
+
+Similar issue related to `eth_getTransactionByHash` but it's not clear which values in RPC call are incorrect. Test regarding calculated and received tx hash is avaible in `getTxByHashTest.js`.
