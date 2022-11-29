@@ -1,3 +1,5 @@
+File `hardhat-changes` contains all changes made to hardhat repository made locally to overcome invalid response for`eth_getBlockByHash` and `eth_getTransactionByHash`
+
 Godwoken RPC call `eth_getBlockByHash` returns some fields with value equal to zero like for this call for block `0x9207b685f981f6bdd1a191de60db31557bafc4774cb2093b395a6c4407b0e6f3`:
 ```javascript
 {
